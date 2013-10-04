@@ -1,0 +1,27 @@
+ABADE es un motor de ejecución distribuida de tareas implementado en C#. (Versión ALFA)
+
+
+Con ABADE el desarrollador solo deberá preocuparse de definir las clases, el orden en que se ejecutarán, y el conjunto de máquinas en las que el servicio ABADE está operativo.
+
+El analizador de flujos de ABADE:
+
+- Valida que exista comunicación con cada una de las máquinas en las que se encuentra desplegado el servicio ABADE.
+- Ejecuta un pequeño test de comunicación.
+- Ejecuta un pequeño test de ejecución de las funciones.
+- Establece el entorno de ejecución más optimo para la ejecución de las tareas.
+
+El servicio ABADE Master, desplegará las tareas en el entorno definido por el analizador de flujos ABADE. Recepcionará toda la información del estado del sistema.
+
+ABADE utiliza:
+
+- ZMQ -> para las comunicaciones.
+- CSScript -> para la compilación y ejecución dinámica de tareas.
+- Log4Net -> para la gestión de trazas.
+
+Hoja de ruta
+------------
+
+- IU mediante la que se pueda realizar la configuración y monitorización del sistema.
+- Protección failover.
+- Variabilidad en los procesos ejecutores de tareas, es decir, el sistema será capaz de garantizar con un pequeño margen de error el   tiempo de proceso, para lo que gestionará el número necesario de servicios que se ejecutan por cada tarea.
+
